@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="OpenCVL is an open, diverse, and large-scale dataset for fine-grained cross-view localization."
+    >
+    <title>OpenCVL Dataset</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="OpenCVL homepage">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>OpenCVL</span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#dataset">Dataset</a>
+        <a href="#splits">Splits</a>
+        <a href="#benchmark">Benchmark</a>
+        <a href="#access">Access</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-ground-samples" data-ground-samples aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Open dataset for fine-grained cross-view localization</p>
+          <h1 id="hero-title">OpenCVL</h1>
+          <p class="hero-subtitle">
+            An open, diverse, and large-scale benchmark pairing street-level images with
+            geo-referenced aerial imagery across Europe.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#access">Access dataset</a>
+            <a class="button button-secondary" href="#benchmark">View benchmark</a>
+          </div>
+        </div>
+        <dl class="hero-stats" aria-label="OpenCVL headline statistics">
+          <div>
+            <dt>619,402</dt>
+            <dd>ground-aerial pairs</dd>
+          </div>
+          <div>
+            <dt>41</dt>
+            <dd>cities</dd>
+          </div>
+          <div>
+            <dt>4</dt>
+            <dd>countries</dd>
+          </div>
+          <div>
+            <dt>7,000+ km<sup>2</sup></dt>
+            <dd>aerial coverage</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section intro-section" id="dataset">
+        <div class="section-heading">
+          <p class="eyebrow">Why OpenCVL</p>
+          <h2>Built for scalable, reproducible CVL research.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-index">01</span>
+            <h3>Open by design</h3>
+            <p>
+              Ground imagery comes from ZOD and Mapillary, paired with aerial imagery
+              from national mapping agencies with open access.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">02</span>
+            <h3>Diverse in practice</h3>
+            <p>
+              The dataset combines calibrated vehicle-mounted sensors with in-the-wild
+              images from pedestrians, cyclists, cars, and other capture platforms.
+            </p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-index">03</span>
+            <h3>Precise where it matters</h3>
+            <p>
+              Evaluation splits are curated for reliable pose labels, including
+              cross-area, snowy, and in-the-wild test sets.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section visual-section" aria-labelledby="coverage-title">
+        <div class="media-panel">
+          <img
+            src="assets/img/opencvl-overview.png"
+            alt="OpenCVL coverage map across Sweden, Norway, the Netherlands, and Poland with sample ground and aerial images."
+          >
+        </div>
+        <div class="visual-copy">
+          <p class="eyebrow">Coverage</p>
+          <h2 id="coverage-title">Four European countries, 41 cities, mixed sensing conditions.</h2>
+          <p>
+            OpenCVL spans Sweden, the Netherlands, Poland, and Norway. It includes
+            high-resolution aerial crops at 0.045 to 0.165 m/pixel, each covering a
+            100 m by 100 m region around a ground-level query.
+          </p>
+          <div class="country-bars" aria-label="Image pairs per country">
+            <div class="country-row">
+              <span>Sweden</span>
+              <meter min="0" max="329454" value="329454">329,454</meter>
+              <strong>329,454</strong>
+            </div>
+            <div class="country-row">
+              <span>Poland</span>
+              <meter min="0" max="329454" value="147173">147,173</meter>
+              <strong>147,173</strong>
+            </div>
+            <div class="country-row">
+              <span>Netherlands</span>
+              <meter min="0" max="329454" value="93062">93,062</meter>
+              <strong>93,062</strong>
+            </div>
+            <div class="country-row">
+              <span>Norway</span>
+              <meter min="0" max="329454" value="49713">49,713</meter>
+              <strong>49,713</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section source-section" aria-labelledby="source-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Data composition</p>
+          <h2 id="source-title">Reliable supervision plus real-world diversity.</h2>
+        </div>
+        <div class="source-grid">
+          <article class="source-card">
+            <h3>ZOD ground imagery</h3>
+            <p>
+              Vehicle-mounted front-facing cameras, LiDAR, and high-end GNSS provide
+              accurate pose supervision for training and curated evaluation.
+            </p>
+            <strong>276,501 images</strong>
+          </article>
+          <article class="source-card">
+            <h3>Mapillary imagery</h3>
+            <p>
+              Crowd-sourced street-level imagery adds broad variation in camera type,
+              mounting, viewpoint, time, weather, and scene content.
+            </p>
+            <strong>342,901 images</strong>
+          </article>
+          <article class="source-card">
+            <h3>Open aerial sources</h3>
+            <p>
+              Aerial crops are retrieved from national mapping agencies for Sweden,
+              the Netherlands, Poland, and Norway.
+            </p>
+            <strong>100 m by 100 m crops</strong>
+          </article>
+        </div>
+        <figure class="sample-strip">
+          <img
+            src="assets/img/opencvl-samples.png"
+            alt="Diverse OpenCVL examples with ground images above their corresponding aerial views."
+          >
+          <figcaption>
+            Diverse ground-level captures paired with aerial views: pedestrian,
+            cyclist, snowy, urban, night, and road scenes.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section split-section" id="splits" aria-labelledby="splits-title">
+        <div class="section-heading">
+          <p class="eyebrow">Evaluation protocol</p>
+          <h2 id="splits-title">Splits for scale, generalization, seasons, and in-the-wild robustness.</h2>
+        </div>
+        <div class="split-layout">
+          <div class="split-tabs" role="tablist" aria-label="Dataset splits">
+            <button class="split-tab is-active" id="tab-train" type="button" role="tab" aria-selected="true" aria-controls="split-panel" data-split="train">
+              Training
+            </button>
+            <button class="split-tab" id="tab-val" type="button" role="tab" aria-selected="false" aria-controls="split-panel" data-split="val">
+              Validation
+            </button>
+            <button class="split-tab" id="tab-cross" type="button" role="tab" aria-selected="false" aria-controls="split-panel" data-split="cross">
+              Cross-area
+            </button>
+            <button class="split-tab" id="tab-snow" type="button" role="tab" aria-selected="false" aria-controls="split-panel" data-split="snow">
+              Snowy
+            </button>
+            <button class="split-tab" id="tab-wild" type="button" role="tab" aria-selected="false" aria-controls="split-panel" data-split="wild">
+              In-the-wild
+            </button>
+          </div>
+          <article class="split-panel" id="split-panel" role="tabpanel" aria-labelledby="tab-train">
+            <p class="panel-label">Training split</p>
+            <h3>581,765 image pairs</h3>
+            <p>
+              Combines 240,226 ZOD pairs with 341,540 Mapillary pairs to scale
+              supervised learning with both accurate and diverse data.
+            </p>
+            <dl>
+              <div>
+                <dt>Primary goal</dt>
+                <dd>Large-scale training</dd>
+              </div>
+              <div>
+                <dt>Ground source</dt>
+                <dd>ZOD + Mapillary</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="section curation-section" aria-labelledby="curation-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Pose curation</p>
+          <h2 id="curation-title">A framework for accurate in-the-wild evaluation.</h2>
+        </div>
+        <ol class="process-list">
+          <li>
+            <strong>Retrieve nearby Mapillary images</strong>
+            <span>Use raw GNSS tags around ZOD coverage areas to find candidates with potential visual overlap.</span>
+          </li>
+          <li>
+            <strong>Match local features</strong>
+            <span>Estimate correspondences between ZOD anchor images and Mapillary images.</span>
+          </li>
+          <li>
+            <strong>Lift matches to 3D</strong>
+            <span>Use ZOD LiDAR point clouds to form 2D-to-3D correspondences for pose estimation.</span>
+          </li>
+          <li>
+            <strong>Verify refined poses</strong>
+            <span>Check reprojections and aerial alignment to build reliable validation and test data.</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section benchmark-section" id="benchmark" aria-labelledby="benchmark-title">
+        <div class="section-heading">
+          <p class="eyebrow">Baseline benchmark</p>
+          <h2 id="benchmark-title">Training on OpenCVL improves Loc2 across the OpenCVL test sets.</h2>
+        </div>
+        <div class="benchmark-grid">
+          <article class="result-card">
+            <span>Cross-area mean localization</span>
+            <strong>6.81 m</strong>
+            <p>OpenCVL full training, compared with 7.55 m from the ZOD-only subset.</p>
+          </article>
+          <article class="result-card">
+            <span>Snowy mean localization</span>
+            <strong>7.79 m</strong>
+            <p>Robustness under seasonal appearance changes in curated ZOD test data.</p>
+          </article>
+          <article class="result-card">
+            <span>In-the-wild mean localization</span>
+            <strong>7.37 m</strong>
+            <p>Diverse Mapillary training reduces error on the in-the-wild test split.</p>
+          </article>
+        </div>
+        <div class="table-wrap" role="region" aria-label="Loc2 benchmark results" tabindex="0">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Training data</th>
+                <th scope="col">Cross-area loc. mean</th>
+                <th scope="col">Cross-area ori. mean</th>
+                <th scope="col">Snowy loc. mean</th>
+                <th scope="col">Snowy ori. mean</th>
+                <th scope="col">In-the-wild loc. mean</th>
+                <th scope="col">In-the-wild ori. mean</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">KITTI w/o orientation prior</th>
+                <td>15.57 m</td>
+                <td>79.75 deg</td>
+                <td>15.92 m</td>
+                <td>83.30 deg</td>
+                <td>15.98 m</td>
+                <td>70.72 deg</td>
+              </tr>
+              <tr>
+                <th scope="row">OpenCVL, ZOD only</th>
+                <td>7.55 m</td>
+                <td>16.20 deg</td>
+                <td>8.04 m</td>
+                <td>8.87 deg</td>
+                <td>8.61 m</td>
+                <td>35.59 deg</td>
+              </tr>
+              <tr>
+                <th scope="row">OpenCVL, full</th>
+                <td>6.81 m</td>
+                <td>14.29 deg</td>
+                <td>7.79 m</td>
+                <td>6.59 deg</td>
+                <td>7.37 m</td>
+                <td>26.70 deg</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section access-section" id="access" aria-labelledby="access-title">
+        <div>
+          <p class="eyebrow">Access</p>
+          <h2 id="access-title">Dataset, code, and paper links can be dropped in here.</h2>
+          <p>
+            The page is ready for public links once the dataset release assets are available.
+            The placeholder actions keep the layout stable for the final release.
+          </p>
+        </div>
+        <div class="access-actions" aria-label="Release links">
+          <a class="button button-primary" href="#" aria-disabled="true">Dataset coming soon</a>
+          <a class="button button-secondary" href="#" aria-disabled="true">Code coming soon</a>
+          <a class="button button-secondary" href="#" aria-disabled="true">Paper coming soon</a>
+        </div>
+      </section>
+
+      <section class="section citation-section" id="citation" aria-labelledby="citation-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Citation</p>
+          <h2 id="citation-title">BibTeX placeholder</h2>
+        </div>
+        <div class="citation-box">
+          <pre><code id="citation-text">@inproceedings{opencvl2026,
+  title = {OpenCVL: An Open, Diverse, and Large-Scale Dataset for Fine-Grained Cross-View Localization},
+  author = {Anonymous ECCV Submission},
+  booktitle = {European Conference on Computer Vision},
+  year = {2026}
+}</code></pre>
+          <button class="copy-button" type="button" data-copy="citation-text">Copy</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>OpenCVL Project · Hero imagery from PDOK aerial imagery and Mapillary thumbnails</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
