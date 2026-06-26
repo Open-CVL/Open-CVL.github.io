@@ -1,15 +1,15 @@
 const splits = {
   train: {
     label: "Training split",
-    title: "581,765 image pairs",
+    title: "Large-scale training",
     body:
-      "Combines 240,226 ZOD pairs with 341,540 Mapillary pairs to scale supervised learning with both accurate and diverse data.",
+      "Combines ZOD and Mapillary ground imagery to scale supervised learning with both accurate pose supervision and broad viewpoint diversity.",
     goal: "Large-scale training",
     source: "ZOD + Mapillary"
   },
   val: {
     label: "Validation split",
-    title: "14,756 image pairs",
+    title: "Curated validation",
     body:
       "Curated validation data for model selection and reliable development against accurate pose annotations.",
     goal: "Development and model selection",
@@ -17,7 +17,7 @@ const splits = {
   },
   cross: {
     label: "Cross-area test split",
-    title: "18,504 image pairs",
+    title: "Cross-area generalization",
     body:
       "ZOD-derived evaluation data from geographic regions that do not overlap with training coverage.",
     goal: "Generalization to unseen areas",
@@ -25,7 +25,7 @@ const splits = {
   },
   snow: {
     label: "Snowy test split",
-    title: "3,015 image pairs",
+    title: "Snowy robustness",
     body:
       "Selected snowy samples with verified alignment to test robustness under seasonal appearance changes.",
     goal: "Weather and seasonal robustness",
@@ -33,7 +33,7 @@ const splits = {
   },
   wild: {
     label: "In-the-wild test split",
-    title: "1,361 image pairs",
+    title: "In-the-wild evaluation",
     body:
       "Manually verified Mapillary evaluation data with diverse viewpoints, sensors, and capture conditions.",
     goal: "Unconstrained real-world evaluation",
