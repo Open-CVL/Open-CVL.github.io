@@ -177,3 +177,65 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
     }, 1600);
   });
 });
+
+const registrationForm = document.querySelector("[data-registration-form]");
+const accessConfirmation = document.querySelector("[data-access-confirmation]");
+const accessGate = document.querySelector("[data-access-gate]");
+const resetRegistrationButton = document.querySelector("[data-reset-registration]");
+const registrationStorageKey = "opencvl.datasetAccessRegistered";
+
+function hasStoredRegistration() {
+  try {
+    return window.localStorage.getItem(registrationStorageKey) !== null;
+  } catch {
+    return false;
+  }
+}
+
+function storeRegistration() {
+  try {
+    window.localStorage.setItem(registrationStorageKey, new Date().toISOString());
+  } catch {
+    // If localStorage is unavailable, the current-page confirmation still works.
+  }
+}
+
+function clearStoredRegistration() {
+  try {
+    window.localStorage.removeItem(registrationStorageKey);
+  } catch {
+    // Ignore storage errors and just restore the visible form.
+  }
+}
+
+function renderRegistrationState(isRegistered, shouldScroll = false) {
+  if (accessGate) accessGate.hidden = isRegistered;
+  if (accessConfirmation) accessConfirmation.hidden = !isRegistered;
+
+  if (shouldScroll) {
+    const target = isRegistered ? accessConfirmation : accessGate;
+    target?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+}
+
+function submitRegistrationForm() {
+  if (!registrationForm?.action) return;
+  HTMLFormElement.prototype.submit.call(registrationForm);
+}
+
+if (registrationForm && accessConfirmation) {
+  renderRegistrationState(hasStoredRegistration());
+
+  registrationForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    submitRegistrationForm();
+    storeRegistration();
+    renderRegistrationState(true, true);
+  });
+
+  resetRegistrationButton?.addEventListener("click", () => {
+    clearStoredRegistration();
+    registrationForm.reset();
+    renderRegistrationState(false, true);
+  });
+}

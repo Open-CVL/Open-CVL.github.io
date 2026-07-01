@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Register for OpenCVL full dataset access before continuing to release archives."
+    >
+    <title>OpenCVL Dataset Access Registration</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=download-no-manifest-1">
+  </head>
+  <body class="download-page access-page">
+    <header class="site-header" aria-label="Site header">
+      <a class="brand" href="index.html" aria-label="OpenCVL homepage">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" focusable="false">
+            <rect class="logo-aerial" x="7" y="7" width="31" height="31" rx="6"></rect>
+            <path class="logo-grid" d="M17 8v29M28 8v29M8 18h29M8 29h29"></path>
+            <path class="logo-road" d="M8 32c8-7 15-10 29-12"></path>
+            <rect class="logo-ground" x="26" y="26" width="31" height="31" rx="6"></rect>
+            <path class="logo-horizon" d="M31 44c7-8 14-8 21 0M31 49h21"></path>
+            <path class="logo-link" d="M23 23 42 42"></path>
+            <circle class="logo-target" cx="23" cy="23" r="4"></circle>
+            <circle class="logo-target" cx="42" cy="42" r="4"></circle>
+          </svg>
+        </span>
+        <span>OpenCVL</span>
+      </a>
+    </header>
+
+    <main class="download-main access-main">
+      <section class="download-intro access-intro" aria-labelledby="access-title">
+        <p class="eyebrow">Dataset Access</p>
+        <h1 id="access-title">Register for OpenCVL Dataset Access</h1>
+      </section>
+
+      <section class="access-gate" data-access-gate aria-label="OpenCVL dataset registration">
+        <form
+          class="registration-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSe1JdnsJCciMjfxSVbBFXFThj63oH7a1QcviB4jW8YR4Uzozg/formResponse"
+          method="POST"
+          target="opencvl-registration-frame"
+          data-registration-form
+        >
+          <div class="form-grid">
+            <label>
+              <span>Name</span>
+              <input name="entry.142047404" type="text" autocomplete="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input name="entry.934796110" type="email" autocomplete="email" required>
+            </label>
+            <label>
+              <span>Institution or company</span>
+              <input name="entry.1842142439" type="text" autocomplete="organization" required>
+            </label>
+            <label>
+              <span>Role</span>
+              <select name="entry.1663997375" required>
+                <option value="">Select one</option>
+                <option>Student</option>
+                <option>Researcher</option>
+                <option>Engineer</option>
+                <option>Faculty</option>
+                <option>Other</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span>Intended use</span>
+            <textarea name="entry.1600113948" rows="4" required></textarea>
+          </label>
+
+          <fieldset>
+            <legend>Agreement</legend>
+            <label><input type="checkbox" name="entry.616050900" value="Agreed" required> I will not redistribute the dataset archives or download links.</label>
+            <label><input type="checkbox" name="entry.1956475062" value="Agreed" required> I will follow the applicable source-data terms and privacy requirements.</label>
+          </fieldset>
+
+          <button class="button button-primary" type="submit">Submit Registration</button>
+        </form>
+        <iframe
+          class="registration-submit-frame"
+          name="opencvl-registration-frame"
+          title="OpenCVL registration submission"
+          hidden
+        ></iframe>
+      </section>
+
+      <section class="access-confirmation" data-access-confirmation hidden aria-live="polite">
+        <p class="eyebrow">Registration Complete</p>
+        <h2>You are registered for dataset access.</h2>
+        <p>
+          This browser remembers your registration, so you can return here and
+          continue to the OpenCVL release archive selection page without filling
+          the form again.
+        </p>
+        <div class="download-actions">
+          <a class="button button-primary" href="download.html">Continue to Dataset Downloads</a>
+          <button class="button button-secondary" type="button" data-reset-registration>Register Again</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>OpenCVL Project &middot; Dataset access registration</p>
+      <a href="index.html">Back to homepage</a>
+    </footer>
+
+    <script src="script.js?v=google-registration-1"></script>
+  </body>
+</html>

@@ -9,7 +9,7 @@
     >
     <title>OpenCVL Dataset Downloads</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=download-page-2">
+    <link rel="stylesheet" href="styles.css?v=download-no-manifest-1">
   </head>
   <body class="download-page">
     <header class="site-header" aria-label="Site header">
@@ -32,43 +32,37 @@
 
     <main class="download-main">
       <section class="download-intro" aria-labelledby="download-title">
-        <p class="eyebrow">Dataset Access</p>
         <h1 id="download-title">Select OpenCVL release archives.</h1>
         <p>
-          The full OpenCVL dataset is distributed as multiple tar archives, so
-          you can download only the source or country split you need. ZOD
-          archives are publicly available now; the remaining release archives
-          are currently being uploaded to the data-sharing platform.
+          Download only the source or country split you need. Each tar archive has
+          a matching <code>.tar.sha256</code> file for checksum verification.
         </p>
         <div class="download-actions">
           <a class="button button-primary" href="#zod">ZOD Archives</a>
-          <a class="button button-secondary" href="#mapillary">Mapillary Status</a>
+          <a class="button button-secondary" href="#mapillary">Mapillary Archives</a>
           <a class="button button-secondary" href="index.html#access">Back to Project</a>
         </div>
       </section>
 
       <section class="download-section" aria-labelledby="how-to-download">
         <div class="download-section-heading">
-          <p class="eyebrow">How to Use</p>
-          <h2 id="how-to-download">Download archives into one folder, then extract them together.</h2>
+          <h2 id="how-to-download">Recommended download workflow.</h2>
         </div>
         <div class="download-note">
-          <p>
-            Each archive expands into the same <code>OpenCVL/</code> root.
-            Download the selected archives, keep the corresponding
-            <code>.sha256</code> files beside them, and verify each file before
-            extraction.
-          </p>
-          <pre><code>sha256sum -c *.sha256
-for f in OpenCVL_*.tar; do
-  tar -xf "$f"
+          <ol>
+            <li>For each archive, download the matching checksum file with <code>.sha256</code> appended, for example <code>OpenCVL_zod_frames.tar</code> and <code>OpenCVL_zod_frames.tar.sha256</code>.</li>
+            <li>Place all downloaded <code>.tar</code> and <code>.tar.sha256</code> files in the same directory.</li>
+            <li>Run the commands below from that directory. All archives expand into one <code>OpenCVL/</code> folder.</li>
+          </ol>
+          <pre><code>sha256sum -c OpenCVL_*.tar.sha256
+for archive in OpenCVL_*.tar; do
+  tar -xf "$archive"
 done</code></pre>
         </div>
       </section>
 
       <section class="download-section" id="zod" aria-labelledby="zod-title">
         <div class="download-section-heading">
-          <p class="eyebrow">Available Now</p>
           <h2 id="zod-title">ZOD release archives.</h2>
         </div>
         <div class="download-grid">
@@ -80,8 +74,12 @@ done</code></pre>
             </div>
             <dl>
               <div>
+                <dt>Archive</dt>
+                <dd>OpenCVL_zod_drives.tar</dd>
+              </div>
+              <div>
                 <dt>Size</dt>
-                <dd>50 GB</dd>
+                <dd>49.83 GiB</dd>
               </div>
             </dl>
             <div class="download-links">
@@ -97,8 +95,12 @@ done</code></pre>
             </div>
             <dl>
               <div>
+                <dt>Archive</dt>
+                <dd>OpenCVL_zod_frames.tar</dd>
+              </div>
+              <div>
                 <dt>Size</dt>
-                <dd>73 GB</dd>
+                <dd>73.85 GiB</dd>
               </div>
             </dl>
             <div class="download-links">
@@ -114,8 +116,12 @@ done</code></pre>
             </div>
             <dl>
               <div>
+                <dt>Archive</dt>
+                <dd>OpenCVL_zod_sequences.tar</dd>
+              </div>
+              <div>
                 <dt>Size</dt>
-                <dd>184 GB</dd>
+                <dd>183.57 GiB</dd>
               </div>
             </dl>
             <div class="download-links">
@@ -128,14 +134,15 @@ done</code></pre>
 
       <section class="download-section" id="mapillary" aria-labelledby="mapillary-title">
         <div class="download-section-heading">
-          <p class="eyebrow">Uploading</p>
           <h2 id="mapillary-title">Mapillary release archives.</h2>
         </div>
         <div class="download-grid">
-          <article class="download-card is-pending">
-            <span class="status-pill is-uploading">Uploading</span>
-            <h3>Mapillary cities: Netherlands</h3>
-            <p>This city archive is currently being uploaded to the data-sharing platform.</p>
+          <article class="download-card">
+            <div>
+              <span class="status-pill is-ready">Public</span>
+              <h3>Mapillary cities: Netherlands</h3>
+              <p>City-level Mapillary imagery and paired OpenCVL release labels for the Netherlands.</p>
+            </div>
             <dl>
               <div>
                 <dt>Archive</dt>
@@ -143,44 +150,20 @@ done</code></pre>
               </div>
               <div>
                 <dt>Size</dt>
-                <dd>422 GB</dd>
+                <dd>421.48 GiB</dd>
               </div>
             </dl>
+            <div class="download-links">
+              <a class="button button-primary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_NL.tar">Download tar</a>
+              <a class="button button-secondary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_NL.tar.sha256">Checksum</a>
+            </div>
           </article>
-          <article class="download-card is-pending">
-            <span class="status-pill is-uploading">Uploading</span>
-            <h3>Mapillary cities: Poland</h3>
-            <p>This city archive is currently being uploaded to the data-sharing platform.</p>
-            <dl>
-              <div>
-                <dt>Archive</dt>
-                <dd>OpenCVL_mapillary_cities_PL.tar</dd>
-              </div>
-              <div>
-                <dt>Size</dt>
-                <dd>255 GB</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="download-card is-pending">
-            <span class="status-pill is-uploading">Uploading</span>
-            <h3>Mapillary cities: Sweden</h3>
-            <p>This city archive is currently being uploaded to the data-sharing platform.</p>
-            <dl>
-              <div>
-                <dt>Archive</dt>
-                <dd>OpenCVL_mapillary_cities_SE.tar</dd>
-              </div>
-              <div>
-                <dt>Size</dt>
-                <dd>119 GB</dd>
-              </div>
-            </dl>
-          </article>
-          <article class="download-card is-pending">
-            <span class="status-pill is-uploading">Uploading</span>
-            <h3>Mapillary cities: Norway</h3>
-            <p>This city archive is currently being uploaded. Norway aerial imagery will be released as a separate overlay archive.</p>
+          <article class="download-card">
+            <div>
+              <span class="status-pill is-ready">Public</span>
+              <h3>Mapillary cities: Norway</h3>
+              <p>City-level Mapillary imagery and paired OpenCVL release labels for Norway.</p>
+            </div>
             <dl>
               <div>
                 <dt>Archive</dt>
@@ -188,14 +171,62 @@ done</code></pre>
               </div>
               <div>
                 <dt>Size</dt>
-                <dd>47 GB</dd>
+                <dd>193.46 GiB</dd>
               </div>
             </dl>
+            <div class="download-links">
+              <a class="button button-primary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_NO.tar">Download tar</a>
+              <a class="button button-secondary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_NO.tar.sha256">Checksum</a>
+            </div>
           </article>
-          <article class="download-card is-pending">
-            <span class="status-pill is-uploading">Uploading</span>
-            <h3>Mapillary in-the-wild test</h3>
-            <p>The in-the-wild test archive is currently being uploaded to the data-sharing platform.</p>
+          <article class="download-card">
+            <div>
+              <span class="status-pill is-ready">Public</span>
+              <h3>Mapillary cities: Poland</h3>
+              <p>City-level Mapillary imagery and paired OpenCVL release labels for Poland.</p>
+            </div>
+            <dl>
+              <div>
+                <dt>Archive</dt>
+                <dd>OpenCVL_mapillary_cities_PL.tar</dd>
+              </div>
+              <div>
+                <dt>Size</dt>
+                <dd>254.45 GiB</dd>
+              </div>
+            </dl>
+            <div class="download-links">
+              <a class="button button-primary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_PL.tar">Download tar</a>
+              <a class="button button-secondary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_PL.tar.sha256">Checksum</a>
+            </div>
+          </article>
+          <article class="download-card">
+            <div>
+              <span class="status-pill is-ready">Public</span>
+              <h3>Mapillary cities: Sweden</h3>
+              <p>City-level Mapillary imagery and paired OpenCVL release labels for Sweden.</p>
+            </div>
+            <dl>
+              <div>
+                <dt>Archive</dt>
+                <dd>OpenCVL_mapillary_cities_SE.tar</dd>
+              </div>
+              <div>
+                <dt>Size</dt>
+                <dd>118.96 GiB</dd>
+              </div>
+            </dl>
+            <div class="download-links">
+              <a class="button button-primary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_SE.tar">Download tar</a>
+              <a class="button button-secondary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_cities_SE.tar.sha256">Checksum</a>
+            </div>
+          </article>
+          <article class="download-card">
+            <div>
+              <span class="status-pill is-ready">Public</span>
+              <h3>Mapillary in-the-wild test</h3>
+              <p>Manually verified Mapillary evaluation data for in-the-wild robustness testing.</p>
+            </div>
             <dl>
               <div>
                 <dt>Archive</dt>
@@ -203,20 +234,13 @@ done</code></pre>
               </div>
               <div>
                 <dt>Size</dt>
-                <dd>2.2 GB</dd>
+                <dd>2.10 GiB</dd>
               </div>
             </dl>
-          </article>
-          <article class="download-card is-pending">
-            <span class="status-pill is-preparing">Preparing</span>
-            <h3>Norway aerial overlay</h3>
-            <p>A separate Norway aerial archive is being prepared so it can be updated independently.</p>
-            <dl>
-              <div>
-                <dt>Archive</dt>
-                <dd>To be announced</dd>
-              </div>
-            </dl>
+            <div class="download-links">
+              <a class="button button-primary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_in_the_wild_test.tar">Download tar</a>
+              <a class="button button-secondary" href="https://s3.epfl.ch/13529-298c030d0f07dbaeca2bad393570678d/OpenCVL_release/OpenCVL_mapillary_in_the_wild_test.tar.sha256">Checksum</a>
+            </div>
           </article>
         </div>
       </section>
@@ -227,6 +251,6 @@ done</code></pre>
       <a href="index.html">Back to homepage</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=google-registration-1"></script>
   </body>
 </html>
