@@ -30,6 +30,24 @@ body {
   line-height: 1.6;
 }
 
+@media (min-width: 941px) {
+  html.homepage-scale {
+    overflow-x: hidden;
+  }
+
+  html.homepage-scale body {
+    zoom: 0.75;
+  }
+
+  html.homepage-scale .hero {
+    min-height: 117.333333svh;
+  }
+
+  html.homepage-scale .visual-section {
+    padding-inline: max(24px, calc((133.333333vw - 1180px) / 2));
+  }
+}
+
 section[id] {
   scroll-margin-top: 96px;
 }
@@ -167,7 +185,11 @@ a {
 .hero-ground-samples {
   position: absolute;
   z-index: 2;
-  inset: 84px 0 10px;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
@@ -1381,10 +1403,6 @@ pre {
     padding-right: 12px;
     padding-top: 130px;
     padding-bottom: 24px;
-  }
-
-  .hero-ground-samples {
-    top: 118px;
   }
 
   .ground-sample {

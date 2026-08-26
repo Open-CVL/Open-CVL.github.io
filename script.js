@@ -44,6 +44,23 @@ const splits = {
 const splitPanel = document.querySelector("#split-panel");
 const splitTabs = document.querySelectorAll(".split-tab");
 const groundSamples = document.querySelector("[data-ground-samples]");
+const hero = document.querySelector(".hero");
+
+function syncHeroMapGeometry() {
+  if (!hero || !groundSamples) return;
+
+  const sourceWidth = 3840;
+  const sourceHeight = 2160;
+  const scale = Math.max(hero.clientWidth / sourceWidth, hero.clientHeight / sourceHeight);
+
+  groundSamples.style.width = `${sourceWidth * scale}px`;
+  groundSamples.style.height = `${sourceHeight * scale}px`;
+}
+
+if (hero && groundSamples) {
+  syncHeroMapGeometry();
+  new ResizeObserver(syncHeroMapGeometry).observe(hero);
+}
 
 function renderSplit(splitKey, tab) {
   const split = splits[splitKey];
