@@ -567,7 +567,7 @@ h3 {
 
   html.homepage-scale .hero-conference {
     top: -6.875vw;
-    width: min(66.666667vw, calc(100vw - 4.166667vw));
+    width: min(78.125vw, calc(100vw - 4.166667vw));
     gap: 0.729167vw;
     font-size: clamp(1.75rem, calc(1.453125rem + 0.403646vw), 2.375rem);
   }
@@ -589,7 +589,7 @@ h3 {
   }
 
   html.homepage-scale .hero-actions {
-    width: min(58.333333vw, 100%);
+    width: min(72.916667vw, 100%);
     gap: 0.625vw;
   }
 
@@ -617,6 +617,12 @@ h3 {
 
   html.homepage-scale .hero-stats dd {
     font-size: clamp(0.75rem, calc(0.609375rem + 0.169271vw), 0.9375rem);
+  }
+}
+
+@media (min-width: 1500px) {
+  html.homepage-scale .hero-conference span:last-child {
+    white-space: nowrap;
   }
 }
 
