@@ -523,6 +523,109 @@ h3 {
   text-transform: uppercase;
 }
 
+/* Keep the desktop hero composed like a single responsive poster. */
+@media (min-width: 941px) {
+  html.homepage-scale .site-header {
+    padding: 0.625vw 2.083333vw;
+    font-size: clamp(0.875rem, calc(0.75rem + 0.208333vw), 1.125rem);
+  }
+
+  html.homepage-scale .brand {
+    gap: 0.520833vw;
+  }
+
+  html.homepage-scale .brand-mark {
+    width: 1.40625vw;
+    height: 1.40625vw;
+  }
+
+  html.homepage-scale .site-institutes img {
+    max-height: 2.395833vw;
+  }
+
+  html.homepage-scale .hero {
+    height: max(800px, 53.333333vw);
+    min-height: 0;
+    gap: 2.083333vw;
+    padding: 7.708333vw 2.083333vw 2.916667vw;
+  }
+
+  html.homepage-scale .ground-sample {
+    width: 8.75vw;
+  }
+
+  html.homepage-scale .hero-copy {
+    width: min(78.125vw, calc(100vw - 3.75vw));
+    transform: translateY(-3.020833vw);
+  }
+
+  html.homepage-scale .hero h1 {
+    max-width: 78.125vw;
+    margin-bottom: 1.145833vw;
+    font-size: clamp(3rem, calc(2.4375rem + 0.677083vw), 4rem);
+  }
+
+  html.homepage-scale .hero-conference {
+    top: -6.875vw;
+    width: min(66.666667vw, calc(100vw - 4.166667vw));
+    gap: 0.729167vw;
+    font-size: clamp(1.75rem, calc(1.453125rem + 0.403646vw), 2.375rem);
+  }
+
+  html.homepage-scale .hero-authors {
+    max-width: min(78.125vw, 100%);
+    margin-bottom: 0.729167vw;
+    font-size: clamp(1.375rem, calc(1.125rem + 0.3125vw), 1.75rem);
+  }
+
+  html.homepage-scale .hero-affiliations {
+    max-width: 44.791667vw;
+    margin-bottom: 1.5625vw;
+    font-size: clamp(1rem, calc(0.84375rem + 0.234375vw), 1.3125rem);
+  }
+
+  html.homepage-scale .hero-affiliations .author-notes {
+    margin-top: 0.104167vw;
+  }
+
+  html.homepage-scale .hero-actions {
+    width: min(58.333333vw, 100%);
+    gap: 0.625vw;
+  }
+
+  html.homepage-scale .hero-actions .button {
+    flex-basis: 11.979167vw;
+    max-width: 14.583333vw;
+    min-height: 3.125vw;
+    padding: 0.625vw 0.9375vw;
+    font-size: clamp(0.875rem, calc(0.75rem + 0.208333vw), 1.125rem);
+  }
+
+  html.homepage-scale .hero-stats {
+    width: 61.458333vw;
+  }
+
+  html.homepage-scale .hero-stats div {
+    min-height: 5.625vw;
+    padding: 1.041667vw;
+  }
+
+  html.homepage-scale .hero-stats dt {
+    margin-bottom: 0.208333vw;
+    font-size: clamp(1.75rem, calc(1.40625rem + 0.390625vw), 2.25rem);
+  }
+
+  html.homepage-scale .hero-stats dd {
+    font-size: clamp(0.75rem, calc(0.609375rem + 0.169271vw), 0.9375rem);
+  }
+}
+
+@media (min-width: 941px) and (max-width: 1200px) {
+  html.homepage-scale .hero-conference {
+    top: -100px;
+  }
+}
+
 .section {
   padding-block: 88px;
 }
@@ -1307,6 +1410,11 @@ pre {
     width: min(100% - 32px, 760px);
   }
 
+  .hero-copy,
+  .hero-stats {
+    width: 100%;
+  }
+
   .hero-copy {
     transform: translateY(-20px);
   }
@@ -1324,8 +1432,11 @@ pre {
   }
 
   .hero-conference {
-    top: -110px;
-    width: min(100vw - 48px, 760px);
+    position: static;
+    top: auto;
+    width: 100%;
+    margin-bottom: 26px;
+    transform: none;
     font-size: 18px;
   }
 
@@ -1468,8 +1579,8 @@ pre {
   }
 
   .hero-conference {
-    top: -94px;
-    width: calc(100vw - 28px);
+    width: 100%;
+    margin-bottom: 22px;
     font-size: 14px;
   }
 
